@@ -274,7 +274,7 @@ acc = U32(c >> 6) ^ U32(c >> 32) ^ 0xe145
 
 非公开 seed `987654322` 的第 5 关运行截图：
 
-![第5关：challenge 与通关提示](images/phase-5.png)
+![第5关：challenge 与通关提示](images/phase-5-complete.png)
 
 ## 7. 第 6 关：函数指针表与间接调用
 
