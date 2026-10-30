@@ -125,9 +125,9 @@ a[i] = (3*a[i-1] - i) ^ t[i],  i = 1,...,5
 
 寻址中的 `rdx*4` 也印证了数组元素是 4 字节整数。解法用 `uint32_t values[6]` 顺序生成六项，减法下溢时自然回绕。
 
-非公开 seed `987654322` 的第 2 关运行截图（原图下缘裁切，成功提示未完整显示）：
+非公开 seed `987654322` 的第 2 关运行截图：
 
-![第2关：运行画面与 challenge](images/phase-2.png)
+![第2关：challenge 与通关提示](images/phase-2-complete.png)
 
 ## 4. 第 3 关：switch 与跳转表
 
@@ -441,7 +441,7 @@ Secret public tests: 10/10
     | ./bomb --seed 987654322
 ```
 
-这次运行依次输出 `Phase 1 defused.` 至 `Phase 6 defused.`，最后输出 `Secret phase defused.`，退出状态为 0。各关截图放在对应分析之后。第 2 关图片的下缘裁切了成功提示，完整通关结果另由本次复现记录和公开测试校验；第 5 关图片可见完整的通过提示。
+这次运行依次输出 `Phase 1 defused.` 至 `Phase 6 defused.`，最后输出 `Secret phase defused.`，退出状态为 0。各关截图放在对应分析之后，均可见完整的通过提示。
 
 ### 9.3 分支与缓冲区边界
 
@@ -466,3 +466,7 @@ Secret public tests: 10/10
 5. [公共驱动](defuser_main.c)与[challenge/context 实现](challenge.c)：确认求解接口、seed 到 challenge 的变换，以及 Honor 的上下文来源。
 
 复现所需工具为 GCC、GNU Make、binutils 中的 objdump 和 Python。
+
+### 报告整理说明
+
+报告整理过程中，使用 AI 辅助问答学习和思路启发，梳理汇编指令、调用关系等相关知识，并润色报告文字。文中的计算关系、测试数字和运行截图均与实际代码及运行结果核对。
